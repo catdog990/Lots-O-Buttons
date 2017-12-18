@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
-var mahKey = REg9ubiXYsGOG7EZXI1QaFgDsVC3YkXq;
-var Topics = ["Movies", "Sports", "Cars"];
+
+var topics = ["Movies", "Sports", "Cars"];
 
 
 function TopInfo(){
@@ -12,25 +12,25 @@ function TopInfo(){
 		url: queryURL,
 		method:"GET"
 	}).done(function(response){
-		
+
 	})
 }
 
 
 
 
-
 function renderButtons(){
-	$("$HButtons").empty();
-	for (var i = 0; i < Topics.length; i++) {
+	$("#hButtons").empty();
+	for (var i = 0; i < topics.length; i++) {
 		var wut = $("<button>");
 		wut.addClass("gif");
-		wut.attr("data-name", Topics[i]);
-		wut.text(Topics[i])
-		$("$HButtons").append(wut);
+		wut.attr("data-name", topics[i]);
+		wut.text(topics[i])
+		$("#hButtons").append(wut);
 	}
-
+console.log(wut);
 };
+
 
 
 
@@ -38,7 +38,7 @@ function renderButtons(){
 $("#searchB").on("click", function(event){
 	event.preventDefault();
 	var gif = $("#sumthang").val().trim();
-	Topics.push(gif);
+	topics.push(gif);
 	renderButtons();
 });
 
